@@ -18,7 +18,7 @@ function Login() {
     if (currentUser) {
       navigate("/chat");
     }
-  }, [currentUser]);
+  }, [currentUser, navigate]);
 
   return (
     <div className="hero min-h-screen bg-base-200">

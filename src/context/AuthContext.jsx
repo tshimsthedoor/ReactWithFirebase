@@ -3,6 +3,7 @@
 /* eslint-disable no-unused-vars */
 import { createContext, useContext, useEffect, useState } from "react";
 import { GoogleAuthProvider, onAuthStateChanged, signInWithRedirect } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import {auth} from "../firebase";
 
 // create context
@@ -17,10 +18,14 @@ export const AuthProvider = ({ children }) => {
     signInWithRedirect(auth, provider);
   };
 
+  // signout
+  const logout = () => signOut(auth);
+
   const value = {
     currentUser,
     setCurrentUser,
-    signinWithGoogle
+    signinWithGoogle,
+    logout
   };
 
   // set current user
