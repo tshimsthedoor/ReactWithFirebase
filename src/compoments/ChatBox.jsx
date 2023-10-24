@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect } from "react";
+
 import Message from "./Message";
 import {
   collection,
@@ -9,10 +9,17 @@ import {
   limit,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ChatBox = () => {
+  const messageEndRef = useRef();
   const [messages, setMessages] = useState([]);
+
+    const scrollToBottom = () => {
+      messageEndRef.current.scrollIntoView({ behavior: "smooth"})
+    };
+
+  useEffect(scrollToBottom, [messages])
 
   useEffect(() => {
     const q = query(
@@ -34,6 +41,7 @@ const ChatBox = () => {
       {messages.map((message) => (
         <Message key={message.id} message={message} />
       ))}
+      <div ref={messageEndRef}></div>
     </div>
   );
 };
