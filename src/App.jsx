@@ -1,10 +1,22 @@
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./compoments/navbar";
+import { AuthProvider } from "./context/AuthContext";
+import ChatRoom from "./pages/ChatRoom";
+import Login from "./pages/Login";
+import { PrivateRoute } from "./routes/PrivateRoute";
+
+
+
 function App() {
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <button className="btn">Button</button>
-      </div>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/chat" element={<PrivateRoute><ChatRoom /></PrivateRoute>} />
+        </Routes>
+      </AuthProvider>
     </>
   );
 }
