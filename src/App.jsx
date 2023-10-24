@@ -1,5 +1,6 @@
 import Navbar from "./compoments/navbar";
-import Login from "./pages/Login";
+import ChatRoom from "./pages/ChatRoom";
+
 
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
     <>
       <div>
         <Navbar />
-        <Login />
+        {/* <Login /> */}
+        <ChatRoom />
       </div>
     </>
   );

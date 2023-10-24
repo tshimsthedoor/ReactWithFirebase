@@ -1,8 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import ChatBox from "../compoments/ChatBox";
+import SendMessage from "../compoments/SendMessage";
 
 const ChatRoom = () => {
-  return <div>ChatRoom</div>;
+  return (
+    <div>
+      <ChatBox />
+      <SendMessage />
+    </div>
+  );
 };
 
 export default ChatRoom;
