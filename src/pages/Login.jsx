@@ -5,8 +5,8 @@ function Login() {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello there</h1>
           <p className="py-6">
-            Join the conversation, meet new people, and make
-            connection in one shared room.
+            Join the conversation, meet new people, and make connection in one
+            shared room.
           </p>
           <button className="btn btn-primary">LOGIN WITH GOOGLE</button>
         </div>
